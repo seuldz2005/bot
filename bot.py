@@ -63,6 +63,7 @@ log = logging.getLogger(__name__)
 intents = discord.Intents.default()
 intents.voice_states = True
 intents.members = True
+intents.message_content = True  # ✅ Thêm dòng này
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 pending_checks: dict[int, asyncio.Task] = {}
