@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: .
+    container_name: study-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./study_data.json:/app/study_data.json
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+      - DISCORD_TOKEN=your_token_here
